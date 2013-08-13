@@ -1,0 +1,761 @@
+body{
+	margin:5px auto 0;
+	width:100%;
+	background:#070908;
+	overflow:hidden;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
+a, a:visited { color: #777; }
+strong { font-weight: bold; }
+p { }
+.controls, .warning, .short-link,  .social { text-align: center; }
+.note { }
+.short-link { }
+object { }
+a:focus { outline: none; }
+button:focus { outline: none; }
+
+@font-face {
+	font-family: 'Conv_CaeciliaLTStd-Heavy';
+	src: url('customfonts/CaeciliaLTStd-Heavy.eot');
+	src: local('?'), url('customfonts/CaeciliaLTStd-Heavy.ttf') format('truetype'), url('customfonts/CaeciliaLTStd-Heavy.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_CaeciliaLTStd-Light';
+	src: url('fonts/CaeciliaLTStd-Light.eot');
+	src: local('?'), url('customfonts/CaeciliaLTStd-Light.woff') format('woff'), url('customfonts/CaeciliaLTStd-Light.ttf') format('truetype'), url('customfonts/CaeciliaLTStd-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Animation Css */
+.clouds {
+	background:url('../images/common/bg-main.jpg') repeat-x 0 bottom; 
+	width:968px; 
+	height:600px; 
+	}
+
+.clouds-h {
+	background:url('../images/common/bg-main.jpg') repeat-x 0 bottom; 
+	width:968px; 
+	height:600px; 
+	margin:0 auto;
+	}
+
+.man-walk-h { 
+	float: left;
+    height: 220px;
+   	margin: 335px 0 0 370px;
+    width: 240px;
+    position: absolute;
+}
+
+.startarrow {
+    float: left;
+    margin-left: 560px;
+    position: absolute;
+    margin-top: 495px;
+	cursor:pointer;
+	z-index: 10000;
+}
+
+#empty_div { position: absolute; margin: 327px 0 0 403px; width: 151px; height: 216px;z-index:10000; }
+#empty_div1 { position: absolute; height: 216px; z-index: 100; margin: 327px 0 0 555px; width: 411px; }
+#empty_div2 { position: absolute; margin: 327px 0 0 0; height: 216px; z-index: 100;  width: 410px; }
+
+/* Animation Css */
+
+/* ---- Canvas Css Start ---- */
+
+#spritesheet {
+    background-image:url('../images/common/man-run.png');
+    left:370px;
+    position: absolute;
+    top: 331px;
+    z-index:8;
+}
+
+.myclass0{
+	left:150px;
+	width:160px;
+	height:160px;
+	float:left;
+	background:url('../images/common/balloon_red.png') no-repeat 0 0;
+	margin: 30px 300px 0 -200px;
+	z-index:1;
+}
+
+.myclass1{
+	left:0;
+	width:160px;
+	height:160px;
+	float:left;
+	background:url('../images/common/balloon_green.png') no-repeat 0 0;
+	margin: 10px 200px 0 -300px;
+}
+
+.myclass2{
+	left:0;
+	width:160px;
+	height:160px;
+	float:left;
+	background:url('../images/common/balloon_red.png') no-repeat 0 0;
+	margin: 10px 0 0 -200px;
+}
+
+.myclass3{
+	left:0;
+	width:350px;
+	height:350px;
+	float:left;
+	background:url('../images/common/cube.png') no-repeat 0 0;
+	margin: 50px 0 0 0;
+}
+
+#show_emptybox {
+	background:none;
+    display: none;
+    height: 400px;
+    left: 300px;
+    position: absolute;
+    top: 50px;
+    width: 668px;
+    z-index: 1001;
+}
+
+/* ---- Canvas Css End ---- */
+
+/* ====== Tool Tip ====== */
+.tool-icon{
+	width:29px;
+	height:33px;
+	float:left;
+	position:absolute;
+	z-index:1000px;
+	background:url(../images/common/tool-icon.gif) no-repeat 0 0;
+	top:315px;
+	margin-left:640px;
+	cursor:pointer;
+}
+
+.tooltip {
+	width:350px;
+	float:left;
+	border:5px solid #d7dbde;
+	background:#fff;
+	padding:10px;
+	position:absolute;
+	top:200px;
+	margin-left:570px;
+}
+
+	.tooltip h4{
+		font-size:20px;
+		font-family:sans-serif;
+		color:#519236;		
+		line-height:25px;	
+		padding-bottom:5px;
+	}
+	
+	.tooltip p{
+		font-size:15px;
+		font-family:sans-serif;
+		color:#000000;
+		line-height:20px;
+		margin-bottom:10px;			
+	}
+	
+	.tooltip a {
+		width:20px;
+		height:20px;
+		float:left;
+		position:absolute;
+		z-index:1000px;
+		background:url(../images/common/tool-close.png) no-repeat 0 0;
+		top:5px;
+		margin-left:340px;
+		cursor:pointer;
+		text-indent:-999999px;
+	}
+
+.greenarrow{
+	margin:0 auto;
+	width:350px;
+	height:99px;
+	background:url(../images/greenarrow.png) no-repeat 0 0;
+}
+
+/* ====== Tool Tip ====== */
+
+#container {
+	margin:0 auto;
+	width:968px;
+	height:600px;
+	background:#000 url('../images/common/bg-inner.jpg') no-repeat 0 0;
+}
+
+.container_1 {
+	width:968px;
+	height:500px;
+	background:#00ff00;
+	position: relative;
+}
+	
+.container-in {
+	width:968px;
+	float:left;	
+}
+
+.vocabulary {
+	width:750px;	
+	margin:110px auto 0;
+	text-align:center;	
+}
+
+	.vocabulary img{
+		margin-bottom:20px;
+	}
+	
+	.vocabulary h2{		
+		font-size:50px;
+		font-family:Sans-Serif;
+		color:#fcfff5;		
+		line-height:30px;	
+		padding-bottom:15px;
+	}
+	
+	.vocabulary p{
+		font-size:26px;
+		font-family:'CaeciliaLTStd-Light';
+		color:#fcfff5;
+		margin-bottom:10px;			
+	}
+	
+	.vocabulary p span{
+		font-size:26px;
+		font-family:'CaeciliaLTStd-Light';
+		color:#c06212;			
+	}
+	
+	.vocabulary input[type=button] {		
+		border:1px solid #1f4225;
+		background:#399e4a;
+		padding:3px 15px;
+		font-size:17px;
+		font-family:'CaeciliaLTStd-Light';
+		font-weight:bold;
+		color:#fff;
+		cursor:pointer;
+		text-transform:uppercase;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	
+	.vocabulary input:hover[type=button] {
+		color:#ddd;
+	}
+
+/* charter */
+
+section { }
+	
+article {
+	width:220px;
+	float:left;
+}
+	
+	article .charter-text {
+		height:393px;	
+	}
+	
+	article .charter{
+		height:207px;
+		position:relative;
+	}
+	
+		.animation-bg{
+			background:url('../images/animation/doctor_withoutmouth.png') no-repeat 0 0;
+			width:212px;
+			float:left;
+			height:207px;
+			z-index:1;
+			position:relative;
+			margin-left:20px;
+		}
+		
+		.animation {
+			 margin:4px 0 0 -21px;
+			 position: absolute;
+			 z-index: 10;
+		}		
+		
+		.replay{ 
+			position:absolute;
+			z-index:10;
+			bottom:0;
+			left:25px;
+		}
+		
+		.replay a{
+			float:left;
+			width:160px;
+			height:29px;
+			background: url('../images/button/replay.png') no-repeat 0 0;
+			position:relative;			
+			font:15px Arial, Helvetica, sans-serif;
+			color:#000;
+			text-align:center;
+			text-decoration:none;
+			cursor:default;
+			text-indent:-999999px;
+			border:none;
+		}
+		.replay a:hover{ }
+
+aside{
+	width:748px;
+	float:left;	
+}
+
+	aside .top{			
+		padding:20px 10px 0 -1px;
+		-moz-border-bottom-right-radius: 5px;
+		-moz-border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+		-moz-border-top-right-radius: 5px;
+		-moz-border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+	}	
+		
+	aside .top.bg{		
+		background:#dbdbdb;
+		height:532px;
+		width:740px;
+		float:right;
+		overflow:hidden;
+	}		
+	
+	aside .top.bgno{		
+		width:400px;
+		float:right;
+		overflow:hidden;
+		height: 150px;
+		margin:450px 350px 0 0;
+	}		
+
+.aside-right{
+	position:relative;
+	width:1000px;
+	float:left;
+	margin-top:60px;
+	z-index:1;
+}
+
+.collapse { 
+	position:relative; 
+}
+
+aside .bottom{		
+	height:79px;
+	position:absolute;
+	margin-left:30%;
+}
+
+/* right side */
+.right-tp{	
+	width:97%;
+	float:left;	
+	margin:20px 10px 6px;
+}
+
+	.right-tp h3{
+		font-size:18px;
+		font-family:Sans-Serif;
+		color:#000;
+		text-align:left;
+		width:630px;
+		float:left;
+	}
+	
+	.right-tp input{
+		width:25px;
+		float:right;
+		height:22px;
+		border:1px solid #b1b0b0;
+		font:14px Arial, Helvetica, sans-serif;
+		color:#000;
+		text-align:center;
+	}
+
+.right-bt{
+	width:710px;
+	float:left;
+	background:#fefefe;
+	margin:10px 0 10px 8px;
+	border:1px solid #bdbdbd;
+	padding:60px 6px 0;
+	position:relative;
+}
+	
+	.right-bt p{
+		font-family:Sans-Serif;
+		font-size:15px;
+		color:#000;
+		text-align:left;	
+	}
+
+/* */
+
+.start a{
+	background: #454444;
+	 -moz-border-radius: 10px 30px;
+    border-radius: 10px 10px 0 0;
+    float: right;
+    margin: -13px 250px 0 0;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 1000;
+	cursor:pointer;
+	font: 15px Arial;
+	color:#fff;
+	text-decoration:none;	
+}
+
+/** Question page 5, 6 ,7 **/
+
+.reply-btn{
+	width:968px;
+	float:left;
+	height:12px;
+	margin-top:600px;
+	background:#070908;
+	position:absolute;
+	z-index:1000;
+	}
+
+.flip-btn{
+	width:600px;
+	float:left;
+	height:8px;
+	margin-top:481px;
+	background:#DBDBDB;
+	position:absolute;
+	z-index:1000;
+}
+/* ======	Animation css Start	 ====== */
+
+#canvas {
+    height: 600px;
+    width: 968px;
+    margin: 5px auto 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;	
+}
+
+#canvas div.man-walk {
+    position: absolute;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+#canvas:target div:not(.overlay) {
+    border: 1px solid black;
+}
+
+#canvas:target div.me div{
+    background: rgba(255, 255, 255, 0.25);
+}
+/* ======	Animation css End	 ====== */
+
+/* Header Css */
+
+.header{ 
+	width:968px;
+	margin:0 auto;
+}
+.head{  
+	width:968px;
+	float:left;
+	background: url('../images/common/head-bg.png') repeat 0 0;
+	position:absolute;
+	z-index:1;
+	height:55px;
+}
+.head-photo{ 
+	width:50px;
+	float:left;
+	margin: 0 10px;
+}
+.head-bar{ 
+	width:678px;
+	float:left;
+}
+
+.head-bar h2 {
+	font-size:20px;
+	font-family:'CaeciliaLTStd-Light';
+	font-weight:bold;
+	line-height:40px;
+	color:#FFF;
+	text-align:left;
+}
+
+.head-bar ul{ }
+
+.head-bar li{
+	width:12px;
+	height:5px;
+	float:left;
+	background:#76797e;
+	margin-right:8px;
+}
+
+.head-bar li.active{
+	background:#ff960b;
+}
+
+.head-green.text{ margin-top:40px; }
+.head-green ul{ }
+
+.head-green li {
+	width:120px;
+	height:5px;
+	float:left;
+	background:#76797e;
+	margin-right:8px;
+	border-radius:10px
+}
+
+.head-green li span {
+	background:#79c814;
+	float: left;
+    height: 5px;
+    border-radius: 10px
+}
+
+.head-down a{ 
+	width:25px;
+	float:left;
+	height:23px;
+	margin:16px 13px 0 0;
+	background:url(../images/common/login-icon.png) no-repeat 0 0;
+}
+
+.head-points{ width:175px;float:left;margin:13px 7px 0 0;}
+
+.head-points ul {}
+
+.head-points li {
+	width:28px;
+	height:26px;
+	float:left;
+	margin-right:1px;
+	font:17px arial;
+	color:#000;
+	text-align:center;	
+	background:url('../images/common/point-bg.png') no-repeat 0 0;
+	line-height:26px;
+}
+/* Header Css */
+
+/*---------- Funcation CSS START-------*/
+
+#i, #said, #a {
+	background:url('../images/planeblock.png') no-repeat 0 0;
+	height:125px;
+	width:195px;
+	float:left;
+	margin:0 0 30px 32px;
+	cursor:pointer;
+}
+ #of{
+	background:url('../images/planeblock.png') no-repeat 0 0;
+	height:125px;
+	width:195px;
+	float:left;
+	margin:0 0 30px 132px;
+	cursor:pointer;
+}
+#was{
+	background:url('../images/planeblock.png') no-repeat 0 0;
+	height:125px;
+	width:195px;
+	float:left;
+	margin:0 0 30px 32px;
+	cursor:pointer;
+}
+
+#pp1, #pp2, #pp3, #pp4, #pp5{
+	color: #484848;
+	text-align: center;
+	font-size: 90px;
+	font-weight: bold;
+	line-height: 110px;
+	height: 125px;
+	font-family:'CaeciliaLTStd-Light';
+}
+#demo_block
+{
+	color: #483080;
+    font-size: 59px;
+    font-weight: bold;
+    left: 327px;
+    position: absolute;
+    top: 137px;
+    font-family:'CaeciliaLTStd-Light';
+}
+
+#mainblock {
+    height: 400px;
+    width: 710px;
+}
+#checkbutton {
+    background: url("../images/button/check.png") no-repeat 0 0;
+    height: 79px;
+    position: absolute;
+    width: 159px;
+    cursor: pointer;
+    z-index:5;
+    margin: 420px 0 0 278px;
+}
+#retrybutton {
+    background: url("../images/button/retry.png") no-repeat 0 0;
+    height: 79px;
+    position: absolute;
+    width: 159px;
+    cursor: pointer;
+    z-index:5;
+    margin: 420px 0 0 278px;
+}
+#nextbutton {
+    background: url("../images/button/next.png") no-repeat 0 0;
+    height: 79px;
+    position: absolute;
+    width: 159px;
+    cursor: pointer;
+    z-index:5;
+    margin: 420px 0 0 278px;
+}
+#finishbutton {
+    background: url("../images/button/finish.png") no-repeat 0 0;
+    height: 79px;
+    position: absolute;
+    width: 159px;
+    cursor: pointer;
+    z-index:5;
+    margin: 420px 0 0 278px;
+}
+#zind {
+	background-color:#D8D8D8;
+	height: 41px;
+	margin-left: 100px;
+	margin-top: 411px;
+	position: absolute;
+	width: 400px;
+	z-index: 6;
+}
+#checkbutton:hover {
+	background:url('../images/button/check-hov.png') no-repeat 0 0;
+}
+#retrybutton:hover {
+	background:url('../images/button/retry-hov.png') no-repeat 0 0;
+}
+#nextbutton:hover {
+	background:url('../images/button/next-hov.png') no-repeat 0 0;
+}
+#finishbutton:hover {
+	background:url('../images/button/finish-hov.png') no-repeat 0 0;
+}
+/*----------Funcation CSS END-------*/
+
+/* ======	Pad	 ====== */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+		
+	aside .top.bg{		
+		background:#dbdbdb;
+		height:531px;
+		width:740px;
+		float:right;
+		overflow:hidden;
+	}	
+	
+	aside .top.bgno{		
+		width:400px;
+		float:right;
+		overflow:hidden;
+		height: 150px;
+		margin:450px 150px 0 0;
+	}
+	
+	.right-tp{	
+		width:97%;
+		float:left;	
+		margin:15px 10px 10px;
+	}
+
+	.aside-right{
+		position:relative;
+		width:1000px;
+		float:left;	
+	}
+	
+	.right-tp h3{
+		font-size:18px;
+		font-family:Sans-Serif;
+		color:#000;
+		text-align:left;
+		width:625px;
+		float:left;		
+	}
+		
+	.right-tp input{
+		width:25px;
+		float:right;
+		height:22px;
+		border:1px solid #b1b0b0;
+		font:14px Arial, Helvetica, sans-serif;
+		color:#000;
+		text-align:center;
+		margin:0;
+		padding:0		
+	}
+	
+	.reply-btn{
+		width:968px;
+		float:left;
+		height:10px;
+		margin-top:600px;
+		background:#070908;
+		position:absolute;
+		z-index:1000;
+	}	
+}}
+/* ======	Pad	 ====== */
